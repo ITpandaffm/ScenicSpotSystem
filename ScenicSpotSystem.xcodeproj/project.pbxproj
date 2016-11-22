@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8B28E2851DE3FAD90093557D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B28E2841DE3FAD90093557D /* main.swift */; };
+		8B28E28C1DE3FAF10093557D /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B28E28B1DE3FAF10093557D /* Graph.swift */; };
+		8BF45C8F1DE44BAB00C11770 /* SparseGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF45C8E1DE44BAB00C11770 /* SparseGraph.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +26,9 @@
 
 /* Begin PBXFileReference section */
 		8B28E2811DE3FAD90093557D /* ScenicSpotSystem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ScenicSpotSystem; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B28E2841DE3FAD90093557D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		8B28E2841DE3FAD90093557D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = ScenicSpotSystem/main.swift; sourceTree = "<group>"; };
+		8B28E28B1DE3FAF10093557D /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		8BF45C8E1DE44BAB00C11770 /* SparseGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparseGraph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 		8B28E2781DE3FAD90093557D = {
 			isa = PBXGroup;
 			children = (
+				8B28E2841DE3FAD90093557D /* main.swift */,
 				8B28E2831DE3FAD90093557D /* ScenicSpotSystem */,
 				8B28E2821DE3FAD90093557D /* Products */,
 			);
@@ -57,7 +62,8 @@
 		8B28E2831DE3FAD90093557D /* ScenicSpotSystem */ = {
 			isa = PBXGroup;
 			children = (
-				8B28E2841DE3FAD90093557D /* main.swift */,
+				8B28E28B1DE3FAF10093557D /* Graph.swift */,
+				8BF45C8E1DE44BAB00C11770 /* SparseGraph.swift */,
 			);
 			path = ScenicSpotSystem;
 			sourceTree = "<group>";
@@ -121,6 +127,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BF45C8F1DE44BAB00C11770 /* SparseGraph.swift in Sources */,
+				8B28E28C1DE3FAF10093557D /* Graph.swift in Sources */,
 				8B28E2851DE3FAD90093557D /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +261,7 @@
 				8B28E28A1DE3FAD90093557D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
