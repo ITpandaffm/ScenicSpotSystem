@@ -33,6 +33,9 @@ public class ArcNode {
     //与该顶点相连的所有边
     var connectedEdgeArr:[Edge] = []
     
+    var visited:Bool = false
+    
+    
     
     init(name:String, introduction:String, popularity:String, haveRestArea:String, haveWC:String) {
         self.name = name
