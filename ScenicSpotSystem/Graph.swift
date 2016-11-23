@@ -9,22 +9,22 @@
 import Foundation
 
 let MAX_WEIGHT:Int = 32676
-
-//枚举类型景区的欢迎度
-public enum ePopularity:Int {
-    case 五星
-    case 四星
-    case 三星
-    case 二星
-    case 一星
-}
+//
+////枚举类型景区的欢迎度
+//public enum ePopularity:Int {
+//    case 五星
+//    case 四星
+//    case 三星
+//    case 二星
+//    case 一星
+//}
 
 public class ArcNode {
     var name:String = "" //景点名称
     var introduction:String = ""  //景点简介
-    var popularity:ePopularity = ePopularity.五星  //景点欢迎度
-    var isHaveRestArea:Bool = true  //是否有休息区
-    var isHaveWC:Bool = true  //是否公厕
+    var popularity:String = "AAAAA旅游景区" //景点欢迎度
+    var isHaveRestArea:String = "有"  //是否有休息区
+    var isHaveWC:String = "有"  //是否公厕
     
     //因为不是仅仅有一条边与结点相连，，
 //    var next:ArcNode?
@@ -34,7 +34,7 @@ public class ArcNode {
     var connectedEdgeArr:[Edge] = []
     
     
-    init(name:String, introduction:String, popularity:ePopularity, haveRestArea:Bool, haveWC:Bool) {
+    init(name:String, introduction:String, popularity:String, haveRestArea:String, haveWC:String) {
         self.name = name
         self.introduction = introduction
         self.popularity = popularity
@@ -48,9 +48,9 @@ public class ArcNode {
     init(name:String) {
         self.name = name
         self.introduction = "\(name)真是个好地方呀风景如画啦啦啦"
-        self.popularity = ePopularity.五星
-        self.isHaveRestArea = true
-        self.isHaveWC = true
+        self.popularity = "AAAA旅游景区"
+        self.isHaveRestArea = "有"
+        self.isHaveWC = "有"
         
 //        self.next = nil
 //        self.pre = nil
@@ -188,16 +188,17 @@ public class Graph {
         return nil
     }
     //获取某条边上的权值
-    public func getWeight(vetexName:String, anotherName:String) -> Int {
+    public func getWeight(vertexName:String, anotherName:String) -> Int {
         for tempEdge in self.edgeArr {
-            if ((tempEdge.startPoint.name == vetexName &&
-                tempEdge.endPoint.name == anotherName) || (tempEdge.endPoint.name == vetexName &&
+            if vertexName == anotherName {
+                return 0
+            } else if ((tempEdge.startPoint.name == vertexName &&
+                tempEdge.endPoint.name == anotherName) || (tempEdge.endPoint.name == vertexName &&
                 tempEdge.startPoint.name == anotherName))
             {
                 return tempEdge.weight
             }
         }
-        print("这条边不存在！")
         return MAX_WEIGHT
     }
     //
