@@ -16,7 +16,7 @@ print("       ***请选择菜单***");
 print("============================");
 print("\n1、创建景区景点分布图。\n2、输出景区景点分布图。\n3、输出导游路线图。\n4、输出导游路线图中的回路。\n5、求两个景点间的最短路径和最短距离。\n6、输出道路修建规划图。\n7、停车场车辆进出记录信息。\n0、退出系统。");
 
-var graph:Graph = Graph(maxVertexNum: MAX_VERTEX_NUM, maxEdgeNum: MAX_EDGE_NUM)
+private var graph:Graph = Graph(maxVertexNum: MAX_VERTEX_NUM, maxEdgeNum: MAX_EDGE_NUM)
 
 while true {
     print("请输入你要选择的菜单项")
@@ -28,13 +28,13 @@ while true {
         case 1:
             createDistributionMap(graph: &graph)
         case 2:
-            outputDistributionMap(graph: &graph)
+            outputDistributionMap(graph: graph)
         case 3:
-            outputGuiLineMap(graph: &graph)
+            outputGuiLineMap(graph: graph)
         case 4:
-            findLoopWay(graph: &graph)
+            findLoopWay(graph: graph)
         case 5:
-            findBestWayAndShortestWay(graph: &graph)
+            findBestWayAndShortestWay(graph: graph)
         case 6: print(choice)
         case 7: print(choice)
         case 8: print(choice)

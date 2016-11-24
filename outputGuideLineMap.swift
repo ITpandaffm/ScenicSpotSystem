@@ -23,7 +23,7 @@
  */
 import Foundation
 
-public func outputGuiLineMap(graph:inout Graph) {
+public func outputGuiLineMap(graph:Graph) {
     
     var path:[String] = []
     var pathsArr:NSMutableArray = []
@@ -34,7 +34,7 @@ public func outputGuiLineMap(graph:inout Graph) {
     }
     for vertex:ArcNode in graph.vertexArr {
         if !vertex.visited {
-            DFSTraverse(graph: &graph, path: &path, pathsArr: &pathsArr ,vertex: vertex)
+            DFSTraverse(graph: graph, path: &path, pathsArr: &pathsArr ,vertex: vertex)
             connectedVectorCount += 1 //联通分量
         }
     }
@@ -57,10 +57,10 @@ public func outputGuiLineMap(graph:inout Graph) {
     let temp1:ArcNode = ArcNode(name: "狮子山")
 //    let temp2:ArcNode = ArcNode(name: "碧水亭")
     let temp2:ArcNode = ArcNode(name: "北门")
-    IsEdge(graph: &graph, vertex1: temp1, vertex2: temp2)
+    IsEdge(graph: graph, vertex1: temp1, vertex2: temp2)
 }
 
-public func DFSTraverse(graph:inout Graph, path:inout [String], pathsArr:inout NSMutableArray,vertex:ArcNode) {
+func DFSTraverse(graph:Graph, path:inout [String], pathsArr:inout NSMutableArray,vertex:ArcNode) {
     vertex.visited = true
     path.append(vertex.name)
     for connectedEdge:Edge in vertex.connectedEdgeArr {
@@ -68,7 +68,7 @@ public func DFSTraverse(graph:inout Graph, path:inout [String], pathsArr:inout N
         let nextPoint:ArcNode = graph.getArcNode(vertexName: nextPointName)!
         if !nextPoint.visited {
             
-            DFSTraverse(graph: &graph, path:&path, pathsArr: &pathsArr ,vertex: nextPoint)
+            DFSTraverse(graph: graph, path:&path, pathsArr: &pathsArr ,vertex: nextPoint)
         }
     }
     pathsArr.add(path)
@@ -83,7 +83,7 @@ public func DFSTraverse(graph:inout Graph, path:inout [String], pathsArr:inout N
 
 
 //判断要查的这两个顶点之间是否有直接相连的边：
-public func IsEdge(graph:inout Graph, vertex1:ArcNode, vertex2:ArcNode) {
+func IsEdge(graph:Graph, vertex1:ArcNode, vertex2:ArcNode) {
     let weight:Int = graph.getWeight(vertexName: vertex1.name, anotherName: vertex2.name)
     if weight != 32676 && weight != 0 {
         print("\(vertex1.name)与\(vertex2.name)之间有直接相连的边!");

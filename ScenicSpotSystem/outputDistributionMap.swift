@@ -11,7 +11,7 @@
 
 import Foundation
 
-public func outputDistributionMap(graph:inout Graph) {
+public func outputDistributionMap(graph:Graph) {
     print("开始输出景区景点分布图")
     var nameStr:String = "   "
     for vertex:ArcNode in graph.vertexArr {

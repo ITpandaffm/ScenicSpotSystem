@@ -12,7 +12,7 @@
 import Foundation
 
 
-public func findBestWayAndShortestWay (graph:inout Graph) {
+public func findBestWayAndShortestWay (graph: Graph) {
     print("请输入要查询的两个距离的两个景点名称（空格隔开）")
     let places = getUserInput()
     let startPlace:String = places.first!
