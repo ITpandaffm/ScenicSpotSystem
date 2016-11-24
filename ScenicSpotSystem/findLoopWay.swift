@@ -25,6 +25,7 @@
 import Foundation
 
 public func findLoopWay(graph:Graph) {
+    print("以下为图中所有的回路！")
     var path:[String] = []
     for vertex:ArcNode in graph.vertexArr {
         vertex.visited = false
@@ -50,7 +51,7 @@ func moveToNext(graph:Graph, path:inout [String] ,vertex:ArcNode)
             let lastTimePointIndex:Int = findLastSamePointInPath(path: path, pointName: nextPointName)
             if path.count - lastTimePointIndex - 1 > 1 {
                 let pathNSArray:NSArray = path as NSArray
-                let range = NSMakeRange(lastTimePointIndex, path.count-lastTimePointIndex-1)
+                let range = NSMakeRange(lastTimePointIndex, path.count-lastTimePointIndex)
                 let loop = pathNSArray.subarray(with: range)
                 for str in loop {
                     print("\(str)-->",terminator:"")
