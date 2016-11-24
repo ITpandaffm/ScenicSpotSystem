@@ -7,6 +7,7 @@
 //  北门 狮子山 仙云石 一线天 飞流瀑 仙武湖 九曲桥 观云台 花卉园 红叶亭 朝日峰 碧水亭
 /*
  求两个景点间的最短路径和最短距离。
+ 输出路径还是有点小问题 啥时候退栈的问题。
  */
 
 import Foundation
@@ -26,7 +27,8 @@ public func findBestWayAndShortestWay (graph:inout Graph) {
     
     let dijkstra:DijkstraTofindShortestWay = DijkstraTofindShortestWay(graph: &graph, startPoint: startPlace)
     dijkstra.createDistanceDict()
-    print(dijkstra.getShortesetDistanceTo(destinPoint: endPlaces))
+    print("最短路径为\(dijkstra.getShortesetDistanceTo(destinPoint: endPlaces))")
+    dijkstra.showPath(destin: endPlaces)
     
 }
 
@@ -73,7 +75,7 @@ class DijkstraTofindShortestWay: NSObject {
         for i in 0 ..< (self.graph?.vertexArr.count)! {
             
             let sortedValueArr = getSortedValueArr()
-            path.append((currentPoint?.name)!)
+            self.path.append((currentPoint?.name)!)
             //查找对应在邻接结点是哪个
             let miniDistance = sortedValueArr[i]
             currentPoint = findFixPoint(miniDistance: miniDistance)
@@ -93,7 +95,6 @@ class DijkstraTofindShortestWay: NSObject {
                 }
             }
         }
-        output(path: &path)
     }
     
     
@@ -129,12 +130,22 @@ class DijkstraTofindShortestWay: NSObject {
             vertex.visited = false
         }
     }
-    func output(path: inout [String]) {
-        path.removeFirst()
-        for str in path {
+    public func showPath(destin:String) {
+        //不能直接输出self.path 因为是一次深度遍历完全的回路，要截取
+        self.path.removeFirst()
+        var index:Int = 0
+        for i in 0 ..< self.path.count {
+            if destin == self.path[i] {
+                index = i
+            }
+        }
+        let pathNSArray:NSArray = self.path as NSArray
+        let range = NSMakeRange(0, index)
+        let subArr = pathNSArray.subarray(with: range)
+        for str in subArr {
             print("\(str)-->",terminator:"")
         }
-        print(path.first!)
+        print(destin)
     }
 
 }
