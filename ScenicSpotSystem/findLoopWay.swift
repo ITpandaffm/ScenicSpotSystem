@@ -27,15 +27,13 @@ import Foundation
 public func findLoopWay(graph:Graph) {
     print("以下为图中所有的回路！")
     var path:[String] = []
-    for vertex:ArcNode in graph.vertexArr {
-        vertex.visited = false
-    }
+    resetAceNodes(arr: &graph.vertexArr)
     for vertex:ArcNode in graph.vertexArr {
         if !vertex.visited {
             moveToNext(graph: graph, path: &path ,vertex: vertex)
         }
     }
-    
+    resetAceNodes(arr: &graph.vertexArr)
 }
 
 func moveToNext(graph:Graph, path:inout [String] ,vertex:ArcNode)
@@ -83,4 +81,10 @@ func findLastSamePointInPath(path:[String], pointName:String) -> Int {
         }
     }
     return 32676
+}
+
+func resetAceNodes(arr:inout [ArcNode]) {
+    for vertex:ArcNode in arr {
+        vertex.visited = false
+    }
 }

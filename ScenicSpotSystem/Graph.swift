@@ -204,6 +204,23 @@ public class Graph {
         }
         return MAX_WEIGHT
     }
-    //
+    //获取与结点相连的所有结点
+    public func getNeighbourVertex(vertex:ArcNode) -> [ArcNode] {
+        var arr:[ArcNode] = []
+        for edge:Edge in edgeArr {
+            let vertex:ArcNode = getArcNode(vertexName: edge.endPoint.name)!
+            arr.append(vertex)
+        }
+        return arr
+    }
+    //获取相邻结点通过权重
+    public func getNeighbourByWeight(vertex:ArcNode, weight:Int) -> ArcNode? {
+        for edge:Edge in vertex.connectedEdgeArr {
+            if edge.weight == weight {
+                return edge.endPoint
+            }
+        }
+        return nil
+    }
     
 }
