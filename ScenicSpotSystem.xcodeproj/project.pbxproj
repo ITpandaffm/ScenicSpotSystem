@@ -10,6 +10,8 @@
 		8B28E2851DE3FAD90093557D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B28E2841DE3FAD90093557D /* main.swift */; };
 		8B28E28C1DE3FAF10093557D /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B28E28B1DE3FAF10093557D /* Graph.swift */; };
 		8B992F0C1DE5C203009AF822 /* outputGuideLineMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B992F0B1DE5C203009AF822 /* outputGuideLineMap.swift */; };
+		8B992F0E1DE60711009AF822 /* findLoopWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B992F0D1DE60711009AF822 /* findLoopWay.swift */; };
+		8B992F101DE60E49009AF822 /* findBestWayAndShortestWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B992F0F1DE60E49009AF822 /* findBestWayAndShortestWay.swift */; };
 		8BF45C931DE542AD00C11770 /* ScenicSpotDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF45C921DE542AD00C11770 /* ScenicSpotDataModel.swift */; };
 		8BF45C951DE579E500C11770 /* CreateDistributionMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF45C941DE579E500C11770 /* CreateDistributionMap.swift */; };
 		8BF45C971DE581FA00C11770 /* outputDistributionMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF45C961DE581FA00C11770 /* outputDistributionMap.swift */; };
@@ -32,6 +34,8 @@
 		8B28E2841DE3FAD90093557D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = ScenicSpotSystem/main.swift; sourceTree = "<group>"; };
 		8B28E28B1DE3FAF10093557D /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		8B992F0B1DE5C203009AF822 /* outputGuideLineMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = outputGuideLineMap.swift; path = ../outputGuideLineMap.swift; sourceTree = "<group>"; };
+		8B992F0D1DE60711009AF822 /* findLoopWay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = findLoopWay.swift; sourceTree = "<group>"; };
+		8B992F0F1DE60E49009AF822 /* findBestWayAndShortestWay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = findBestWayAndShortestWay.swift; sourceTree = "<group>"; };
 		8BF45C901DE53C1A00C11770 /* ScenicSpotList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ScenicSpotList.plist; sourceTree = "<group>"; };
 		8BF45C911DE5406800C11770 /* EdgeList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EdgeList.plist; sourceTree = "<group>"; };
 		8BF45C921DE542AD00C11770 /* ScenicSpotDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenicSpotDataModel.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				8BF45C941DE579E500C11770 /* CreateDistributionMap.swift */,
 				8BF45C961DE581FA00C11770 /* outputDistributionMap.swift */,
 				8B992F0B1DE5C203009AF822 /* outputGuideLineMap.swift */,
+				8B992F0D1DE60711009AF822 /* findLoopWay.swift */,
+				8B992F0F1DE60E49009AF822 /* findBestWayAndShortestWay.swift */,
 				8BF45C901DE53C1A00C11770 /* ScenicSpotList.plist */,
 				8BF45C911DE5406800C11770 /* EdgeList.plist */,
 			);
@@ -141,6 +147,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BF45C951DE579E500C11770 /* CreateDistributionMap.swift in Sources */,
+				8B992F0E1DE60711009AF822 /* findLoopWay.swift in Sources */,
+				8B992F101DE60E49009AF822 /* findBestWayAndShortestWay.swift in Sources */,
 				8B28E28C1DE3FAF10093557D /* Graph.swift in Sources */,
 				8BF45C931DE542AD00C11770 /* ScenicSpotDataModel.swift in Sources */,
 				8B28E2851DE3FAD90093557D /* main.swift in Sources */,

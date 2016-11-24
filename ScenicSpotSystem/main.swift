@@ -6,6 +6,8 @@
 //  Copyright © 2016年 ITPanda. All rights reserved.
 //
 
+
+
 import Foundation
 
 print("============================");
@@ -29,8 +31,10 @@ while true {
             outputDistributionMap(graph: &graph)
         case 3:
             outputGuiLineMap(graph: &graph)
-        case 4: print(choice)
-        case 5: print(choice)
+        case 4:
+            findLoopWay(graph: &graph)
+        case 5:
+            findBestWayAndShortestWay(graph: &graph)
         case 6: print(choice)
         case 7: print(choice)
         case 8: print(choice)
