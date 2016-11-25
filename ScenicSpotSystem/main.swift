@@ -15,7 +15,7 @@ print("============================");
 print("     欢迎使用景区信息管理系统");
 print("       ***请选择菜单***");
 print("============================");
-print("\n1、创建景区景点分布图。\n2、输出景区景点分布图。\n3、输出导游路线图。\n4、输出导游路线图中的回路。\n5、求两个景点间的最短路径和最短距离。\n6、输出道路修建规划图。\n7、停车场车辆进出记录信息。\n0、退出系统。");
+print("\n1、创建景区景点分布图。\n2、输出景区景点分布图。\n3、输出导游路线图。\n4、输出导游路线图中的回路。\n5、求两个景点间的最短路径和最短距离。\n6、查找排序。\n7、景点热度排行榜。\n8、车辆进出管理系统。");
 
 
 
@@ -39,8 +39,10 @@ while true {
             findLoopWay(graph: graph)
         case 5:
             findBestWayAndShortestWay(graph: &graph)
-        case 6: print(choice)
-        case 7: print(choice)
+        case 6:
+            SearchScenicSpot(graph: graph)
+        case 7:
+            SortScenicSpot(graph: graph)
         case 8: print(choice)
         default:
             print("输入有误，请重新输入")

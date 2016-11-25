@@ -97,8 +97,33 @@ class DijkstraTofindShortestWay: NSObject {
         }
     }
     
+    public func hasPathTo(endPoint:String) -> Bool {
+        if self.distToOtherPointDict[endPoint] != 32676 {
+            return true
+        } else {
+            return false
+        }
+    }
     
-    public func getShortesetDistanceTo(destinPoint:String) -> Int {
+    public func showPath(destin:String) {
+        //不能直接输出self.path 因为是一次深度遍历完全的回路，要截取
+        self.path.removeFirst()
+        var index:Int = 0
+        for i in 0 ..< self.path.count {
+            if destin == self.path[i] {
+                index = i
+            }
+        }
+        let pathNSArray:NSArray = self.path as NSArray
+        let range = NSMakeRange(0, index)
+        let subArr = pathNSArray.subarray(with: range)
+        for str in subArr {
+            print("\(str)-->",terminator:"")
+        }
+        print(destin)
+    }
+    
+    func getShortesetDistanceTo(destinPoint:String) -> Int {
         return self.distToOtherPointDict[destinPoint]!
     }
     func findFixPoint(miniDistance:Int) -> ArcNode {
@@ -118,35 +143,13 @@ class DijkstraTofindShortestWay: NSObject {
         return sortedValueArr
     }
     
-    func hasPathTo(endPoint:String) -> Bool {
-        if self.distToOtherPointDict[endPoint] != 32676 {
-            return true
-        } else {
-        return false
-        }
-    }
+   
     func resetAceNodes(graph:inout Graph) {
         for vertex:ArcNode in graph.vertexArr {
             vertex.visited = false
         }
     }
-    public func showPath(destin:String) {
-        //不能直接输出self.path 因为是一次深度遍历完全的回路，要截取
-        self.path.removeFirst()
-        var index:Int = 0
-        for i in 0 ..< self.path.count {
-            if destin == self.path[i] {
-                index = i
-            }
-        }
-        let pathNSArray:NSArray = self.path as NSArray
-        let range = NSMakeRange(0, index)
-        let subArr = pathNSArray.subarray(with: range)
-        for str in subArr {
-            print("\(str)-->",terminator:"")
-        }
-        print(destin)
-    }
+  
 
 }
 
