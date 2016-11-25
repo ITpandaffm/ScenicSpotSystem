@@ -43,7 +43,8 @@ while true {
             SearchScenicSpot(graph: graph)
         case 7:
             SortScenicSpot(graph: graph)
-        case 8: print(choice)
+        case 8:
+            parkingLotManageSys()
         default:
             print("输入有误，请重新输入")
         
@@ -51,4 +52,15 @@ while true {
 }
 
 
+//都会用到的方法，获取用户输入的字符串 返回一个数组
+func getUserInput() -> [String] {
+    let stdInput = FileHandle.standardInput
+    let userInput = NSString(data: stdInput.availableData, encoding: String.Encoding.utf8.rawValue)
+    var tempArr = userInput?.components(separatedBy: " ")
+    let tempArr2 = tempArr?.last?.components(separatedBy: "\n")
+    //把空格去掉归并到一个数组里
+    tempArr?.removeLast()
+    tempArr?.append((tempArr2?.first)!)
+    return tempArr!
+}
 

@@ -32,16 +32,7 @@ public func findBestWayAndShortestWay (graph:inout Graph) {
     
 }
 
-func getUserInput() -> [String] {
-    let stdInput = FileHandle.standardInput
-    let userInput = NSString(data: stdInput.availableData, encoding: String.Encoding.utf8.rawValue)
-    var tempArr = userInput?.components(separatedBy: " ")
-    let tempArr2 = tempArr?.last?.components(separatedBy: "\n")
-    //把空格去掉归并到一个数组里
-    tempArr?.removeLast()
-    tempArr?.append((tempArr2?.first)!)
-    return tempArr!
-}
+
 
 class DijkstraTofindShortestWay: NSObject {
     
