@@ -16,10 +16,6 @@ print("     欢迎使用景区信息管理系统");
 print("       ***请选择菜单***");
 print("============================");
 print("\n1、创建景区景点分布图。\n2、输出景区景点分布图。\n3、输出导游路线图。\n4、输出导游路线图中的回路。\n5、求两个景点间的最短路径和最短距离。\n6、查找排序。\n7、景点热度排行榜。\n8、车辆进出管理系统。");
-
-
-
-
 private var graph:Graph = Graph(maxVertexNum: MAX_VERTEX_NUM, maxEdgeNum: MAX_EDGE_NUM)
 
 while true {

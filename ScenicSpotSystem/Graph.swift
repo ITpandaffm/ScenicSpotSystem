@@ -9,15 +9,6 @@
 import Foundation
 
 let MAX_WEIGHT:Int = 32676
-//
-////枚举类型景区的欢迎度
-//public enum ePopularity:Int {
-//    case 五星
-//    case 四星
-//    case 三星
-//    case 二星
-//    case 一星
-//}
 
 public class ArcNode {
     var name:String = "" //景点名称
@@ -43,9 +34,7 @@ public class ArcNode {
         self.popularity = popularity
         self.isHaveRestArea = haveRestArea
         self.isHaveWC = haveWC
-        
-//        self.next = nil
-//        self.pre = nil
+
     }
     
     init(name:String) {
@@ -131,8 +120,6 @@ public class Graph {
                 return false
             }
         }
-        
-        
         /*
          这里切不可以直接修改传进来的点的信息，一来 不是引用传递 ，改了对外部也没用
          除非用inout关键字修饰

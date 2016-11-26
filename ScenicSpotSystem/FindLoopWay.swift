@@ -62,7 +62,6 @@ func moveToNext(graph:Graph, path:inout [String] ,vertex:ArcNode)
     path.removeLast()       //要退一步的时候，模拟进行退栈，把最后一个元素移除
 }
 
-
 func findVertexIndexInVertexArr(graph:Graph, vertex:ArcNode) -> Int { //这里假设传个Array，要有泛型[Arcnode] 还不如干脆整个graph传过来
     for i in 0 ..< graph.vertexArr.count {
         let temp:ArcNode = graph.vertexArr[i]

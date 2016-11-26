@@ -121,8 +121,10 @@ class ParkingLotSystem: NSObject {
                     for moveCar in self.tempPark {
                         self.parkingLotStack.append(moveCar)
                     }
+                    self.tempPark.removeAll() //记得要清空一下临时队列
                     //原来的车进入完毕之后， 检查一下等待队列，如果等待队列不为空，证明之前停车场是满的，现在多了一个位置，
                     //所以取出等待队列的队头元素，并加入到停车场里面
+                    
                     if isHaveCarWaiting() {
                         let firstWaitCar = self.waitingQueue.first
                         self.waitingQueue.removeFirst() //哈哈哈 调用removeFirst之后，后面的元素会自动补上来
