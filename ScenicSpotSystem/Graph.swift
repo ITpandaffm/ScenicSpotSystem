@@ -16,18 +16,11 @@ public class ArcNode {
     var popularity:String = "AAAAA旅游景区" //景点欢迎度
     var isHaveRestArea:String = "有"  //是否有休息区
     var isHaveWC:String = "有"  //是否公厕
-    
-    //因为不是仅仅有一条边与结点相连，，
-//    var next:ArcNode?
-//    var pre:ArcNode?
-    
+
     //与该顶点相连的所有边
     var connectedEdgeArr:[Edge] = []
     
     var visited:Bool = false
-    
-    
-    
     init(name:String, introduction:String, popularity:String, haveRestArea:String, haveWC:String) {
         self.name = name
         self.introduction = introduction
@@ -36,16 +29,12 @@ public class ArcNode {
         self.isHaveWC = haveWC
 
     }
-    
     init(name:String) {
         self.name = name
         self.introduction = "\(name)真是个好地方呀风景如画啦啦啦"
         self.popularity = "AAAA旅游景区"
         self.isHaveRestArea = "有"
         self.isHaveWC = "有"
-        
-//        self.next = nil
-//        self.pre = nil
     }
     
 }
@@ -110,7 +99,6 @@ public class Graph {
             print("不考虑自环边！插入边失败")
             return false
         }
-
         for tempEdge in self.edgeArr {
             if (tempEdge.startPoint.name == vertex.name &&
                 tempEdge.endPoint.name == anotherVertex.name) ||

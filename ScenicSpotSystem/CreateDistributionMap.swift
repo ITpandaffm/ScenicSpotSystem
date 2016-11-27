@@ -44,7 +44,13 @@ public func initGraphEdgeArr(graph:inout Graph) {
 
 func readPlist(plistNameStr:String) -> NSArray {
     let path = Bundle.main.path(forResource: plistNameStr, ofType: nil)
+    
+    
+    //老师看这里！ 这个路径很重要啊，因为swift更新了之后这个方法的路径去到其他目录了，请务必要把plist文件移动到这打印的路径下
     print(Bundle.main)     //main方法返回的路径贼奇怪，换了个地，为了测试方便，直接拷贝一份plist文件到其目录下了。就不过多纠结这些了。。
+    
+    
+    
     let arr:NSArray = NSArray.init(contentsOfFile: path!)!
     return arr
 }

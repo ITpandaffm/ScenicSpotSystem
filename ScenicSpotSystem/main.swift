@@ -5,10 +5,11 @@
 //  Created by ffm on 16/11/22.
 //  Copyright © 2016年 ITPanda. All rights reserved.
 //
-
-//各个功能板块都是一个函数，感觉太面向过程了的样子。 但是每次点击都实例化一个对象？有点浪费。。
-//要不创建一个DistributionMap类 还有。。？
-
+//
+/* 
+ plist文件的路径，可能是由于运行在mac上，不同于运行在虚拟机，或者是swift语言的改版，在读取plist文件的时候，Bundle.main方法的读取路径不再是之前的在当前工程目录里查找读取，而是去到了一个debug的文件夹，具体还得通过print方法输出，通过finder前往文件夹才行。所以这里也恳请老师留个心眼，如果读取文件失败的话，麻烦把plist文件移动到Bundle.main方法所提供的路径。谢谢老师。
+ （其实我已经把输出路径的代码混在了第一个功能creatDistributionMap里面了，直接按的话应该可以输出
+ */
 import Foundation
 
 print("============================");
