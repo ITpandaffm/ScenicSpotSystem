@@ -24,6 +24,7 @@
  */
 import Foundation
 
+
 public func findLoopWay(graph:Graph) {
     print("以下为图中所有的回路！")
     var path:[String] = []
